@@ -3,7 +3,7 @@ from flask import Flask, jsonify
 app = Flask(__name__)
 
 phase = [
-    {"phase_number": 1, "phase_name": "first quarter"},
+    {"phaseNumber": 1, "phaseName": "first quarter"},
 ]
 
 
