@@ -11,10 +11,11 @@ pipenv install --dev
 ```
 
 ### Enter Development Environment
-
 ```
 pipenv shell
+flask run
 ```
+
 
 ### Deploy
 * Setup
