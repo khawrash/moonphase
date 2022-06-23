@@ -2,9 +2,7 @@ from flask import Flask, jsonify
 
 app = Flask(__name__)
 
-phase = [
-    {"phaseNumber": 1, "phaseName": "first quarter"},
-]
+phase = {"phaseNumber": 1, "phaseName": "first quarter"}
 
 
 @app.get("/phase")
