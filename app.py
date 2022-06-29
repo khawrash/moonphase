@@ -16,7 +16,7 @@ def calc_sun_moon_deg(dict_t):
     _, slon, _ = e.observe(sun).apparent().frame_latlon(ecliptic_frame)
     _, mlon, _ = e.observe(moon).apparent().frame_latlon(ecliptic_frame)
     phase_deg = (mlon.degrees - slon.degrees) % 360.0
-    print('{0:.1f}'.format(phase_deg))
+    #print('{0:.1f}'.format(phase_deg))
     return phase_deg
 
 def calc_phase_from_deg(s_m_deg):
