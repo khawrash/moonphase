@@ -16,13 +16,13 @@ def calc_sun_moon_deg(dict_t):
     _, slon, _ = e.observe(sun).apparent().frame_latlon(ecliptic_frame)
     _, mlon, _ = e.observe(moon).apparent().frame_latlon(ecliptic_frame)
     phase_deg = (mlon.degrees - slon.degrees) % 360.0
-    # print('{0:.1f}'.format(phase_deg))
+    print('{0:.1f}'.format(phase_deg))
     return phase_deg
 
 def calc_phase_from_deg(s_m_deg):
-    if(s_m_deg >= 359 and s_m_deg < 1):
+    if(s_m_deg >= 355 and s_m_deg < 5):
         return {"phaseNumber": 0, "phaseName": "new"}
-    elif(s_m_deg >= 1 and s_m_deg < 89):
+    elif(s_m_deg >= 5 and s_m_deg < 89):
         return {"phaseNumber": 1, "phaseName": "waxing crescent"}
     elif(s_m_deg >= 89 and s_m_deg < 91):
         return {"phaseNumber": 2, "phaseName": "first quarter"}
@@ -34,7 +34,7 @@ def calc_phase_from_deg(s_m_deg):
         return {"phaseNumber": 5, "phaseName": "waning gibbous"}
     elif(s_m_deg >= 269 and s_m_deg < 271):
         return {"phaseNumber": 6, "phaseName": "last quarter"}
-    elif(s_m_deg >= 271 and s_m_deg < 359):
+    elif(s_m_deg >= 271 and s_m_deg < 355):
         return {"phaseNumber": 7, "phaseName": "waning crescent"}
     else:
         return {"phaseNumber": 404, "phaseName": "not found"}
